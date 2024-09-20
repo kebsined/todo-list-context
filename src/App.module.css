@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Great vibes';
+	src: url(../public/fonts/GreatVibes-Regular.ttf);
+}
+
+.App {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../public/background3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.TodoList {
+	height: 45rem;
+	width: 35rem;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.title {
+	color: #fff;
+	text-shadow: 3px 3px 3px #000;
+	font-family: 'Great vibes';
+	font-size: 45px;
+	letter-spacing: 3px;
+	word-spacing: 10px;
+	margin: 10px;
+}
+
+.loader {
+	padding: 10px;
+	margin: 10px auto;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 10px solid rgba(60, 0, 172, 0.805);
+	border-left-color: transparent;
+	transform: translate(-8%, -8%);
+	animation: loader 1s infinite;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.tasks {
+	margin-top: 20px;
+	width: 32rem;
+	height: 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.tasks::-webkit-scrollbar {
+	background-color: transparent;
+	width: 10px;
+}
+.tasks::-webkit-scrollbar-thumb {
+	background-color: #ffffff78;
+	border-radius: 5px;
+	border: 0.5px solid #ffffff3d;
+}
+
+.sort {
+	margin-top: 10px;
+	width: 7rem;
+	height: 2.5rem;
+	border-radius: 10px;
+	border: 0.5px solid #fff;
+	background-color: #22044465;
+	color: #ffffff;
+	font-weight: 700;
+	text-shadow: 1px 1px 1px #000;
+}
+.sort:hover {
+	background-color: #610397b0;
+}
+
+.sort:active {
+	transform: scale(0.9);
+}

@@ -1,0 +1,65 @@
+.modalBg {
+	position: absolute;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(rgb(142, 66, 242), transparent),
+		linear-gradient(to top left, rgba(160, 77, 255, 0.397), transparent),
+		linear-gradient(to top right, rgba(157, 157, 247, 0.723), transparent);
+	background-blend-mode: darken;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.editForm {
+	padding-top: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #5d01f0a2;
+	width: 35rem;
+	height: 10rem;
+	box-shadow: 5px 5px 5px 2px #b88ffb77;
+	border-radius: 30px;
+}
+
+.cancel {
+	margin-top: 10px;
+	border-radius: 50%;
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	height: 20px;
+	width: 20px;
+	border: 0.5px solid #fff;
+	background-color: rgb(68, 1, 149);
+	color: #fff;
+}
+
+.cancel:hover {
+	background-color: #610397b0;
+}
+
+.save {
+	margin-top: 10px;
+	width: 7rem;
+	height: 2.5rem;
+	border-radius: 10px;
+	border: 0.5px solid #fff;
+	background-color: #22044465;
+	color: #ffffff;
+	font-weight: 700;
+	text-shadow: 1px 1px 1px #000;
+}
+.save:hover {
+	background-color: #610397b0;
+}
+
+.save:active {
+	transform: scale(0.9);
+}
+.cancel:active {
+	transform: scale(0.9);
+}

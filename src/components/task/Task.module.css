@@ -1,0 +1,17 @@
+.task {
+	margin-top: 5px;
+	width: 30rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: #ffffff;
+	font-size: 20px;
+	justify-content: space-between;
+	padding: 0 1rem;
+	line-height: 3;
+	font-weight: 600;
+	text-shadow: 3px 3px 3px #000000;
+	font-style: oblique;
+	background-color: #ffffff49;
+	border-radius: 20px;
+}

@@ -1,0 +1,51 @@
+.options {
+	width: 8rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	justify-items: center;
+}
+.delete {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+	background-color: rgba(177, 94, 221, 0.582);
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: 10px;
+	border: none;
+	background-image: url(../../../public/trash.png);
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 1px 1px 1px 1px #fff;
+}
+
+.edit {
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 1px 1px 1px 1px #fff;
+	background-image: url(../../../public/edit.png);
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #db767ba5;
+}
+
+.delete:hover {
+	background-color: rgba(137, 43, 226, 0.736);
+}
+
+.edit:hover {
+	background-color: rgba(226, 43, 95, 0.908);
+}
+
+.delete:active,
+.edit:active {
+	transform: scale(0.9);
+}
