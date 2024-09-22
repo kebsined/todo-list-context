@@ -1,24 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "970b",
-      "name": "dfsd"
-    },
-    {
-      "id": "d914",
-      "name": "dsfsdfh"
-    },
-    {
-      "id": "779d",
-      "name": "aaaa"
-    },
-    {
-      "id": "aa79",
-      "name": "qqq"
-    },
-    {
-      "name": "qweerrt",
-      "id": "7baa"
-    }
-  ]
+  "todos": []
 }

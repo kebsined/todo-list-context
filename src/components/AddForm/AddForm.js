@@ -1,14 +1,18 @@
 import styles from './AddForm.module.css';
 import { Input } from '../Input/Input';
+import { useContext } from 'react';
 
-export const AddForm = ({
-	onAddTodo,
-	onTodoNameChange,
-	taskName,
-	isAdding,
-	isDeleting,
-	isUpdating,
-}) => {
+import { AppContext } from '../../context';
+
+export const AddForm = () => {
+	const {
+		onAddTodo,
+		onTodoNameChange,
+		taskName,
+		isAdding,
+		isDeleting,
+		isUpdating,
+	} = useContext(AppContext);
 	return (
 		<form className={styles.AddForm} onSubmit={onAddTodo}>
 			<Input

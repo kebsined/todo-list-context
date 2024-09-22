@@ -9,6 +9,9 @@ import { useAddTodo } from './hooks/useAddTodo/useAddTodo';
 import { ModalWindow } from './components/modalWindow/modalWindow';
 import { Task } from './components/task/Task';
 
+import { AppContext } from './context';
+import { TaskContext } from './context';
+
 export const App = () => {
 	const [todos, setTodos] = useState([]);
 	const [updateTodos, setUpdateTodos] = useState(false);
@@ -61,6 +64,7 @@ export const App = () => {
 
 	const onUpdateTodo = event => {
 		event.preventDefault();
+		console.log('updating..');
 		requestUpdate(currentTaskId, updatedTaskName).then(() => {
 			closeEditWindow();
 			updateTaskFlag();
@@ -117,22 +121,26 @@ export const App = () => {
 			)}
 			<div className={styles.TodoList}>
 				<h1 className={styles.title}>Track your tasks</h1>
-				<AddForm
-					onAddTodo={onAddTodo}
-					onTodoNameChange={onTodoNameChange}
-					taskName={taskName}
-					isAdding={isAdding}
-					isDeleting={isDeleting}
-					isUpdating={isUpdating}
-				/>
-				<Input
-					id='search'
-					className={styles.searchInput}
-					placeholder={'Search...'}
-					value={searchQuery}
-					onChange={event => setSearchQuery(event.target.value)}
-					type='text'
-				/>
+				<AppContext.Provider
+					value={{
+						onAddTodo,
+						onTodoNameChange,
+						taskName,
+						isAdding,
+						isDeleting,
+						isUpdating,
+					}}
+				>
+					<AddForm />
+					<Input
+						id='search'
+						className={styles.searchInput}
+						placeholder={'Search...'}
+						value={searchQuery}
+						onChange={event => setSearchQuery(event.target.value)}
+						type='text'
+					/>
+				</AppContext.Provider>
 				<button
 					className={styles.sort}
 					type='submit'
@@ -147,12 +155,12 @@ export const App = () => {
 						<div className={styles.loader}></div>
 					) : (
 						searchTodo.map(({ name, id }) => (
-							<Task
+							<TaskContext.Provider
+								value={{ onDeleteTask, callEditWindow, id }}
 								key={id}
-								name={name}
-								callEditWindow={() => callEditWindow(id)}
-								onDeleteTask={() => onDeleteTask(id)}
-							/>
+							>
+								<Task name={name} />
+							</TaskContext.Provider>
 						))
 					)}
 				</div>

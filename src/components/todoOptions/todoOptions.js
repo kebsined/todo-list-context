@@ -1,6 +1,9 @@
 import styles from './TodoOptions.module.css';
+import { useContext } from 'react';
+import { TaskContext } from '../../context';
 
-export const Options = ({ id, callEditWindow, onDeleteTask }) => {
+export const Options = () => {
+	const { callEditWindow, onDeleteTask, id } = useContext(TaskContext);
 	return (
 		<div className={styles.options}>
 			<button
